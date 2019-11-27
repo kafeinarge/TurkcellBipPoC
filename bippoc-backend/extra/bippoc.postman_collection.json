@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "933fb6e5-7ee1-46e1-a295-a4130d853611",
+		"name": "bippoc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Register-Hakan-Legacy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"celikhkn@gmail.com\",\n\t\"name\": \"Hakan\",\n\t\"password\": \"9ecd86cb-c341-4f79-8486-1f00366035a5\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register-Hakan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hakan.celik@bulutmd.com\",\n\t\"name\": \"Hakan\",\n\t\"password\": \"83f1a111-eabe-4f44-af7d-7b7c8f35f354\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/user/registerV2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"user",
+								"registerV2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register-Arda",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hakan.celik@bulutmd.com\",\n\t\"name\": \"Hakan 2\",\n\t\"password\": \"83f1a111-eabe-4f44-af7d-7b7c8f35f354\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/user/registerV2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"user",
+								"registerV2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/user/verify/7e27f5d4-9a3d-4875-8ff2-1afd6af8c545",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"user",
+								"verify",
+								"7e27f5d4-9a3d-4875-8ff2-1afd6af8c545"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateLastSeen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/user/updateLastSeen",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"user",
+								"updateLastSeen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/contact/remove/celikhkn@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"contact",
+								"remove",
+								"celikhkn@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "contact",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/contact/add/arda.turut@bulutmd.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"contact",
+								"add",
+								"arda.turut@bulutmd.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/contact/delete/celikhkn@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"contact",
+								"delete",
+								"celikhkn@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "Thread",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/message/thread/celikhkn@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"message",
+								"thread",
+								"celikhkn@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MarkSeen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/message/markSeen/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"message",
+								"markSeen",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Plain",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": \"Plain test message\",\n\t\"receiver\": {\n\t\t\"id\": 6\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/message/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"message",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Encrypted",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": \"9c54ce7067ad46a2943b1696cd6f6e2c9c54ce7067ad46a2943b1696cd6f6e2c067ad46a2943b1696cd6f6e2c\",\n\t\"encrypted\": true,\n\t\"receiver\": {\n\t\t\"id\": 6\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/bippoc/api/message/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"bippoc",
+								"api",
+								"message",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login-Hakan-Legacy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "celikhkn@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "9ecd86cb-c341-4f79-8486-1f00366035a5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/bippoc/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bippoc",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login-Hakan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "hakan.celik@bulutmd.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "83f1a111-eabe-4f44-af7d-7b7c8f35f354",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/bippoc/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bippoc",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login-Arda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "arda.turut@bulutmd.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "fc43d9f4-5d54-4f81-9d90-ae8c684470ed",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/bippoc/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bippoc",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/bippoc/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"bippoc",
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

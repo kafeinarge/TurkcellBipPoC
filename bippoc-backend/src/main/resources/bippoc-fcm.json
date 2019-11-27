@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bippoc-kafein",
+  "private_key_id": "6610e6a35a6b67324cbac6345740115915509134",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC7gKlEKqjv1qRs\n9W9xk1O8nGTj1ox/nPh5p1lLL9RnvkIBjJF0jmHn00NF/DYd/5U3RcN/fZQlOGzn\nTfhqDgx//UxcVWrVz9x7JHizAbRSoMt3+rxrS4SFUiVaxkZcQiNPdFzfDEFrn6ES\nctLTPy2kOTdJJrTs1/HoypTPoGHNOeRxl1Gbm2DE7ZNf0NKXabeCI4mU3ZFLTCHp\nU2iraJgJDH2SKUKKLeZyBJUsx+9SIrjoMCALP7xlwC72cMd4KaVS3l1mcfRCZSOf\n+zuIGpIIE1aZmA9wWVqk9VlXMtbXI0vUib8TgH9s3ZEWSSjlA0qxz/50jXmVnAN1\np20ySqjvAgMBAAECggEAAXhXm2cMOQkr89tpcBtcGjajBzLyRLk0gjEA3w6KcfUe\nFl4Fm+4r2qyfh+fGKC5jUJzK6hp6yV9BDKqMqo7eo+LsBi34maGOFHxrjS0TvrFv\ntvVFJJWMffEaxYntbkwUc8sxQ+HC4jb3r9SCTlFd/b4hxACPhZXchIXmFx9Q9PzI\n56K79TkU/n5rd8TjjxpQqJ247TqynW1jUtK0W42B0iaMAF1bWka+h6HpvSAlhOCh\n9ztkR0qFymy0fGyrYM/pp2oSX/ZBjcoTT3eXTclXTTU2zUjoqyJqEZZOxI07rPnN\ngCFo/bIKXfElvLrwxwhtuuKLUmBdjTuY1ZNWDU42iQKBgQD+RS7pXD96vj82dRcT\nXci6wl1MddhU5QS55TtJyH30oEEJEEWSEuYK7hnwvFu8SNsbtx67H1qx7AAks8Qp\nCl/2/pqyUnqPwftDwJ4xeWgpThpVYKZyGcwjZXUm5ksv7e4wBDWVp4CeMM9I/8k7\nGO9HdB1ZSpfRQMte3NZdH6CTxwKBgQC8xzNiNQrpztc8Ww/GXs8GamO8mwOnHx2Y\n5u9Ci/ZTiH9Rgp/S3AnClTduh5BUvKUbjo3xaQvHKOANrvV064aFj8WO/roaqPQp\nq5ka+YiZHLHWiuDdVlgjPFLugS30B8aEOSorB60lFW/Xt9VJO6iuox0+UmNNBpqi\n2ap4dizxmQKBgGsCOKzzKrAAct/7RRvcY0bd15//FG0d+PA3Hc1+eCvEabpjw7On\nCnNdI0OiMcU6sCOo3GEJ4ARy+th3Yz2WZS6wlfAoL/ZiP9mSrcDKhGClwwVdaI8q\ndjQLVdNqJghkzNIeY2K5HLL2fbYOF+UsKD9dCaDzeJMS/sPMktacIdsvAoGAMHeM\nT7iClsjOJebTRADvchw6gx/hbjTk6m7QGuvIUGYJGipJUl+/+b9Jvgz8F2VflpWh\nB8wKhBWQgLLcvioCHaRt+mqX6WRbW5987ZoHYhgl6Ik7dlhGxLUmLano3HBqnWP3\n2Zhc8dpxHpdKIUU556xlQ6zvZcU+SnVL+SWOIHECgYB9kVsLg8MhUlImRrtu1nVg\nz9SkSXCQpxpKMDN5NhH+7icnPxKtZGXv0unKZXeupD7PYPO59DYDzZS2fdgVOsr8\nxbZyFMEHjUHAmCMoon058hh8lqOdWs2LZGJRqOd6PWp2rzixmBfVsLtvF7rGLcgk\nTpLUhvJhBnHkLaatySR0rQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-nfluq@bippoc-kafein.iam.gserviceaccount.com",
+  "client_id": "111356713912714828013",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-nfluq%40bippoc-kafein.iam.gserviceaccount.com"
+}

@@ -1,0 +1,66 @@
+
+server:
+  port: 5000
+  servlet:
+    context-path: /bippoc
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bippoc?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&verifyServerCertificate=false&useSSL=false
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  jmx.enabled: false
+  jackson:
+    default-property-inclusion: NON_NULL
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  mail:
+    host: smtp.yandex.com
+    port: 465
+    username: bippoc@yandex.com
+    password: BipPoc2019
+    properties:
+      mail:
+        smtp:
+          connectiontimeout: 5000
+          auth: true
+          ssl:
+            enable: true
+
+logging:
+  level:
+    ROOT: INFO
+    com.kafein.bippoc: DEBUG
+
+
+fcmFilePath: bippoc-fcm.json
+fcmServerName: https://bippoc-kafein.firebaseio.com
+
+server.url: http://bippoc.kafein.com.tr/api/user/verify/
+
+
+---
+# PROD
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bippoc?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&verifyServerCertificate=false&useSSL=false
+    username: dev
+    password: yZh4LmgCD0x1+
+
+
