@@ -1,9 +1,10 @@
 import { AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import base64 from 'base-64';
+import uuid from 'react-native-uuid';
 
 import { API } from '../resources/axios';
 import { formUrlEncoded } from '../resources/utils';
+import * as BULUT from '../resources/bulut-crypto';
 
 import {
   ADD_NAME,
@@ -46,18 +47,24 @@ export const addPassword = password => {
 /*
 ActionCreator to signIn on application
 */
-export const SignIN = ({ email, password }, callback) => {
+export const SignIN = ({ email }, callbackSuccess, callbackFail) => {
   return async dispatch => {
     dispatch({ type: SIGN_IN_LOADING });
 
+    const password = await AsyncStorage.getItem('@bippoc:password_bip');
     const data = formUrlEncoded({ username: email, password });
     try {
       const response = await API.post('/login', data, config);
-      console.log('SignIn', response);
-      AsyncStorage.setItem('@bippoc2:key', JSON.stringify({ email, password }));
+
+      AsyncStorage.setItem('@bippoc:auth_bip2', JSON.stringify({ email, password }));
+
+      console.log(response);
       authSuccess(dispatch, { email });
-      callback && callback();
+
+      callbackSuccess && callbackSuccess();
+      console.log('step2', callbackSuccess);
     } catch (error) {
+      callbackFail && callbackFail();
       authUnsuccess(error, dispatch);
     }
   };
@@ -65,43 +72,64 @@ export const SignIN = ({ email, password }, callback) => {
 /*
 ActionCreator to create new user registration
 */
-export const registerUser = ({ name, email, password }) => {
+// Legacy User
+export const registerUser = ({ name, email }) => {
   return async dispatch => {
     dispatch({ type: SIGN_UP_LOADING });
 
+    console.log('Registering legacy user !!!');
+
     try {
-      // TODO:
-      // Legacy - register
-      // New - registerV2
+      const password = await uuid.v4();
+      console.log(password);
+
       const response = await API.post('/user/register', {
         name,
         password,
         username: email,
       });
+
+      await AsyncStorage.setItem('@bippoc:password_bip', password);
       registerSuccess(dispatch);
     } catch (error) {
+      console.log(error);
       registerUnsuccess(error, dispatch);
     }
   };
 };
 
-// export const registerUserV2 = ({ name, email, password }) => {
-//   return async dispatch => {
-//     dispatch({ type: SIGN_UP_LOADING });
+export const registerUserV2 = ({ name, email }) => {
+  return async dispatch => {
+    dispatch({ type: SIGN_UP_LOADING });
 
-//     try {
-//       const response = await API.post('/user/registerV2', {
-//         name,
-//         password,
-//         username: email,
-//       });
-//       console.log('registerUserV2', response);
-//       registerSuccess(dispatch);
-//     } catch (error) {
-//       registerUnsuccess(error, dispatch);
-//     }
-//   };
-// };
+    console.log('Registering user v2 !!!');
+
+    const keyPair = await BULUT.generateKey();
+    const exportedPrivateKey = await BULUT.exportKey(keyPair.privateKey);
+    const exportedPublicKey = await BULUT.exportKey(keyPair.publicKey);
+
+    try {
+      const password = await uuid.v4();
+      console.log(password);
+
+      const response = await API.post('/user/registerV2', {
+        name,
+        password,
+        publicKey: BULUT.stringify(exportedPublicKey),
+        username: email,
+      });
+      console.log('registerV2', response);
+
+      await AsyncStorage.setItem('@bippoc:privateKey_bip', BULUT.stringify(exportedPrivateKey));
+      await AsyncStorage.setItem('@bippoc:password_bip', password);
+
+      registerSuccess(dispatch);
+    } catch (error) {
+      console.log(error);
+      registerUnsuccess(error, dispatch);
+    }
+  };
+};
 
 const authSuccess = (dispatch, payload) => {
   dispatch({
@@ -114,7 +142,7 @@ const authSuccess = (dispatch, payload) => {
 const authUnsuccess = (error, dispatch) => {
   dispatch({
     type: AUTH_FAILURE,
-    payload: error.code,
+    payload: error.status,
   });
 };
 

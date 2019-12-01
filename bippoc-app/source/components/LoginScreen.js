@@ -17,8 +17,8 @@ import { addEmail, addPassword, SignIN } from '../actions/AuthActions';
 
 class LoginScreen extends Component {
   _SignIN() {
-    const { email, password } = this.props;
-    this.props.SignIN({ email, password });
+    const { email } = this.props;
+    this.props.SignIN({ email });
   }
 
   renderAcessButton() {
@@ -47,13 +47,13 @@ class LoginScreen extends Component {
             <TextInput
               value={this.props.email}
               onChangeText={email => this.props.addEmail(email)}
-              placeholder="Email:"
+              placeholder="Email"
               placeholderTextColor="#fff"
               style={styles.textInput}
               returnKeyType="next"
               onSubmitEditing={() => this.passwordInput.focus()}
             />
-            <TextInput
+            {/* <TextInput
               value={this.props.password}
               onChangeText={password => this.props.addPassword(password)}
               placeholder="Password:"
@@ -61,7 +61,7 @@ class LoginScreen extends Component {
               style={styles.textInput}
               returnKeyType="go"
               ref={input => (this.passwordInput = input)}
-            />
+            /> */}
             <TouchableHighlight onPress={() => Actions.signUpScreen()}>
               <Text style={styles.textRegister}>Sign up now »</Text>
             </TouchableHighlight>
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
   textInput: {
     fontSize: 18,
     height: 45,
+    color: '#fff'
   },
   textRegister: {
     fontSize: 16,

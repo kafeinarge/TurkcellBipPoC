@@ -6,8 +6,6 @@ import ReduxThunk from 'redux-thunk';
 import Routes from './Routes';
 import reducers from './reducers/index';
 
-import { generateKeys, buf2Hex } from './resources/ecdh';
-
 const composeEnhancers =
   process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -15,8 +13,7 @@ const composeEnhancers =
 
 export default class App extends Component<{}> {
   async componentWillMount() {
-    // await generateKeys();
-    // console.log(buf2Hex(publicKey));
+    // console.clear();
   }
 
   render() {

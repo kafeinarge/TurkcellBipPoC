@@ -4,4 +4,4 @@ import App from './source/App';
 
 const bippoc = props => <App />;
 
-AppRegistry.registerComponent('Bippoc', () => bippoc);
+AppRegistry.registerComponent('KafeinBipPoc', () => bippoc);

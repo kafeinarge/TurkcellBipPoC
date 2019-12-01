@@ -1,1 +1,1 @@
-export const app_name = 'Bippoc';
+export const app_name = 'Kafein Bip Poc';

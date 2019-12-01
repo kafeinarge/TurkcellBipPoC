@@ -7,7 +7,7 @@ export default class WelcomeScreen extends Component {
     return (
       <View style={{ flex: 1, padding: 10 }}>
         <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={{ fontSize: 20 }}>Welcome to Bippoc!</Text>
+          <Text style={{ fontSize: 20 }}>Kafein Bip Poc!</Text>
         </View>
 
         <View style={{ flex: 1 }}>

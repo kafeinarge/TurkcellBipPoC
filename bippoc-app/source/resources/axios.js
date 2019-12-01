@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API = axios.create({
   baseURL: 'http://46.101.110.133/bippoc/api',
+  // baseURL: 'http://192.168.1.62/bippoc/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -47,8 +48,8 @@ API.interceptors.response.use(
     // if (process.env.NODE_ENV === "development") {
     // }
 
-    console.error('We have an error', { ...error });
-    console.error(message, status);
+    // console.error('We have an error', { ...error });
+    // console.error(message, status);
     return Promise.reject({ status, message });
   },
 );

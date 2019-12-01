@@ -31,6 +31,7 @@ class ChatsList extends Component {
             contactName: contact.user.name,
             contactEmail: contact.user.username,
             isLegacy: contact.user.legacy,
+            publicKey: contact.user.publicKey,
           })
         }
       >

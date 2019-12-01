@@ -18,7 +18,7 @@ class TabBarMenu extends Component {
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <View style={{ height: 50, justifyContent: 'center', marginLeft: 20 }}>
-            <Text style={{ color: 'white', fontSize: 19 }}>Bippoc App</Text>
+            <Text style={{ color: 'white', fontSize: 19 }}>Kafein Bip Poc</Text>
           </View>
 
           <View style={{ flexDirection: 'row', marginRight: 10 }}>

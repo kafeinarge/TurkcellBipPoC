@@ -1,35 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
 import { View, Text, TextInput, Image, TouchableHighlight, ListView } from 'react-native';
 import { changeMessage, sendMessage, fetchMessages } from '../actions/AppActions';
 
 class Chat extends Component {
-  componentWillMount() {
-    this.props.fetchMessages(this.props.contactEmail);
-    this.createDataSource(this.props.conversation);
+  async componentWillMount() {
+    const { contactEmail, publicKey, isLegacy, conversation } = this.props;
+    this.props.fetchMessages({ contactEmail, publicKey, isLegacy });
+    this.createDataSource(conversation);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.contactEmail != nextProps.contactEmail) {
-      this.props.fetchMessages(nextProps.contactEmail);
+    const { contactEmail, publicKey, isLegacy, conversation } = nextProps;
+    if (this.props.contactEmail != contactEmail) {
+      this.props.fetchMessages({ contactEmail, publicKey, isLegacy });
     }
-    this.createDataSource(nextProps.conversation);
+    this.createDataSource(conversation);
   }
 
   /* Component Context */
   _sendMessage() {
-    const { message, contactName, contactEmail, contactUserId, isLegacy } = this.props;
-    this.props.sendMessage({ message, contactName, contactEmail, contactUserId, isLegacy });
+    const { message, contactName, contactEmail, contactUserId, isLegacy, publicKey } = this.props;
+    this.props.sendMessage({
+      message,
+      contactName,
+      contactEmail,
+      contactUserId,
+      isLegacy,
+      publicKey,
+    });
   }
 
   createDataSource(conversation) {
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.dataSource = ds.cloneWithRows(conversation);
-    // this.dataSource is a variable on scope of this class
   }
 
-  renderRow(text, authUsername) {
+  renderRow = text => {
+    const authUsername = this.props.authUsername;
+
     const isSender = text.sender.username === authUsername;
     if (isSender) {
       return (
@@ -64,17 +73,13 @@ class Chat extends Component {
         </View>
       </View>
     );
-  }
+  };
 
   render() {
     return (
       <View style={{ flex: 1, marginTop: 5, backgroundColor: '#eee4dc', padding: 10 }}>
         <View style={{ flex: 1, paddingBottom: 20 }}>
-          <ListView
-            enableEmptySections
-            dataSource={this.dataSource}
-            renderRow={text => this.renderRow(text, this.props.authUsername)}
-          />
+          <ListView enableEmptySections dataSource={this.dataSource} renderRow={this.renderRow} />
         </View>
 
         <View style={{ flexDirection: 'row', height: 60 }}>
