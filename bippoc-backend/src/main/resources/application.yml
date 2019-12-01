@@ -31,7 +31,7 @@ spring:
     host: smtp.yandex.com
     port: 465
     username: bippoc@yandex.com
-    password: BipPoc2019
+    password: 
     properties:
       mail:
         smtp:
@@ -49,7 +49,7 @@ logging:
 fcmFilePath: bippoc-fcm.json
 fcmServerName: https://bippoc-kafein.firebaseio.com
 
-server.url: http://bippoc.kafein.com.tr/api/user/verify/
+server.url: http://46.101.110.133/bippoc/api/user/verify/
 
 
 ---
@@ -61,6 +61,6 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/bippoc?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&verifyServerCertificate=false&useSSL=false
     username: dev
-    password: yZh4LmgCD0x1+
+    password: 
 
 
